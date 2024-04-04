@@ -149,6 +149,9 @@ public class GameStateManager : MonoBehaviour
     private void WinGame()
     {
         dataHolder.win = true;
+        dataHolder.timeInGame = timeInGame;
+        dataHolder.deathCount = deathCount;
+        dataHolder.killCount = killCount;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -158,6 +161,9 @@ public class GameStateManager : MonoBehaviour
     private void LoseGame()
     {
         dataHolder.lose = true;
+        dataHolder.timeInGame = timeInGame;
+        dataHolder.deathCount = deathCount;
+        dataHolder.killCount = killCount;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

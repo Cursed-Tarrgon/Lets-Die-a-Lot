@@ -735,7 +735,7 @@ MonoBehaviour:
   damage: 1
   maxCollisions: 1
   collisions: 0
-  destroyDelay: 1
+  destroyDelay: 0.1
   isBullet: 1
 --- !u!54 &5793370101575950076
 Rigidbody:
