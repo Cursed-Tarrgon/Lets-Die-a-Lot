@@ -46,6 +46,8 @@ public class DataHolder : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "MainMenu")
         {
+            win = false;
+            lose = false;
             Destroy(this.gameObject);
         }
 

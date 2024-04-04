@@ -262,7 +262,6 @@ public class FirstPersonController : MonoBehaviour
             }
             else if (moveDirection.magnitude > 0f && IsGrounded && isSprinting)
             {
-                Debug.Log("State = Sprinting");
                 characterState = CharacterState.sprint;
                 moveSpeed = sprintSpeed;
             }
@@ -606,21 +605,17 @@ public class FirstPersonController : MonoBehaviour
     {
         if (canSprint && canUseStamina && context.performed)
         {
-            Debug.Log("Is Sprinting");
             isSprinting = true;
         }
 
         if (context.canceled)
         {
-            Debug.Log("Not Sprinting");
             isSprinting = false;
         }
     }
 
     private IEnumerator RegenerateStamina()
     {
-        Debug.Log("Regenerating Stamina");
-
         yield return new WaitForSeconds(timeBeforeStaminaRegenStarts);
         WaitForSeconds timeToWait = new WaitForSeconds(staminaTimeIncrement);
 

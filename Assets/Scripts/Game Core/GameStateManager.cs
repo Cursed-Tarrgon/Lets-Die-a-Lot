@@ -79,6 +79,10 @@ public class GameStateManager : MonoBehaviour
 
     private void Start()
     {
+        hasLost = false;
+        hasWon = false;
+        timeInGame = 0f;
+        timeTillEnd = maxTimeInGame;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
