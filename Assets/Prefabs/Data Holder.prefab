@@ -191,11 +191,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: End Scene Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 902048162493549723, guid: f4c7a9bb3b675d840842815bfcb92eff,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1920254617982169541, guid: f4c7a9bb3b675d840842815bfcb92eff,
         type: 3}
       propertyPath: m_Pivot.x
@@ -295,16 +290,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3771136595748868951, guid: f4c7a9bb3b675d840842815bfcb92eff,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8051490627346422956, guid: f4c7a9bb3b675d840842815bfcb92eff,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
