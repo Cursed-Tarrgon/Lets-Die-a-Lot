@@ -119,10 +119,10 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private float timeBeforeStaminaRegenStarts = 5f;
     [SerializeField] private float staminaValueIncrement = 2f;
     [SerializeField] private float staminaTimeIncrement = 0.1f;
-    private bool canUseStamina;
-    private bool isSprinting;
-    private bool currentlySprinting;
-    private Coroutine regeneratingStamina;
+    public bool canUseStamina;
+    public bool isSprinting;
+    public bool currentlySprinting;
+    public Coroutine regeneratingStamina;
     public static Action<FirstPersonController, float> OnStaminaChange;
 
     [Header("Footstep Parameters")]
@@ -262,6 +262,7 @@ public class FirstPersonController : MonoBehaviour
             }
             else if (moveDirection.magnitude > 0f && IsGrounded && isSprinting)
             {
+                Debug.Log("State = Sprinting");
                 characterState = CharacterState.sprint;
                 moveSpeed = sprintSpeed;
             }
@@ -276,7 +277,9 @@ public class FirstPersonController : MonoBehaviour
         }
         else if (isDead)
         {
+            canUseStamina = true;
             transform.position = GameStateManager.Instance.SpawnPoint.transform.position;
+            
         }
     }
 
@@ -603,17 +606,21 @@ public class FirstPersonController : MonoBehaviour
     {
         if (canSprint && canUseStamina && context.performed)
         {
+            Debug.Log("Is Sprinting");
             isSprinting = true;
         }
 
         if (context.canceled)
         {
+            Debug.Log("Not Sprinting");
             isSprinting = false;
         }
     }
 
     private IEnumerator RegenerateStamina()
     {
+        Debug.Log("Regenerating Stamina");
+
         yield return new WaitForSeconds(timeBeforeStaminaRegenStarts);
         WaitForSeconds timeToWait = new WaitForSeconds(staminaTimeIncrement);
 
